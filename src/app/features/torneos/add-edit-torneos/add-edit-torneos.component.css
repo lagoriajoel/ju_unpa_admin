@@ -1,0 +1,33 @@
+.example-box{
+    display: flex;
+
+  }
+  
+  .example-chip .cdk-drop-list-dragging {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  
+
+.mat-chip.mat-standard-chip {
+    margin-inline: 5px;
+    background-color: #e0e0e0;
+    color: rgba(0,0,0,.87);
+    display: inline-grid;
+}
+
+.equipos {
+    display: flex;
+    justify-content: space-evenly;
+} 
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.example-margin {
+  margin: 0 10px;
+}

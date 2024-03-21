@@ -1,0 +1,85 @@
+
+     
+      <div class="container">
+        <h2 mat-dialog-title>Nuevo Torneo </h2>
+        <mat-spinner *ngIf="loading" [diameter]="30"></mat-spinner>
+      </div>
+      <form [formGroup]="form" (ngSubmit)="addTorneo()">
+      
+
+      
+          <div class="row">
+            <div class="column">
+              <mat-form-field>
+                <mat-label>Seleccione la Disciplina :</mat-label>
+                <mat-select formControlName="disciplina"  (selectionChange)="cargarEquiposPorDisciplina($event.value)" >
+                  <mat-option *ngFor="let disciplina of disciplinas" [value]="disciplina.id"  >
+                    {{disciplina.nombre}} {{disciplina.categoria}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+            
+            <div class="row">
+             
+                
+          
+                
+                  <mat-label>Equipos Participantes: </mat-label>
+              <div class="equipos">
+
+                
+                <mat-label class="example-box" cdkDrag  *ngFor="let item of equipos">
+                  {{item.nombre}}
+                </mat-label>
+              </div>
+              </div>
+            
+               
+           
+             <div class="row">
+
+                <mat-form-field>
+                  <input type="number"  matInput placeholder="Puntos Partido ganado" value="3">
+                </mat-form-field>
+             </div>
+             <div class="row">
+
+              <mat-form-field>
+                <input type="number"  matInput placeholder="Puntos Partido Perdido" value="0">
+              </mat-form-field>
+           </div>
+           <div class="row">
+
+            <mat-form-field>
+              <input type="number"  matInput placeholder="Puntos Partido Empatado" value="1">
+            </mat-form-field>
+         </div>
+
+         <section class="example-section">
+          <label class="example-margin">Rondas :</label>
+          <mat-radio-group aria-labelledby="example-radio-group-label"class="example-radio-group" formControlName="rondas">
+          <!-- <mat-radio-button class="example-margin" *ngFor="let ronda of rondas" [value]="ronda">
+            {{ronda}}
+          </mat-radio-button> -->
+        </mat-radio-group>
+        </section>
+    
+        
+           
+        
+             
+    
+           
+        
+        
+        
+    
+        <mat-dialog-actions align="end">
+          <button type="button" (click)="cancelar()" mat-button>Cancelar</button>
+          <button type="submit" mat-button cdkFocusInitial>Aceptar</button>
+        </mat-dialog-actions>
+        
+      </form>
+    

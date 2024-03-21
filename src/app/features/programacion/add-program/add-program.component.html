@@ -1,0 +1,62 @@
+<div class="container">
+    <h2 mat-dialog-title>Editar Encuentro </h2>
+    <mat-spinner *ngIf="loading" [diameter]="30"></mat-spinner>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="EditGame()">
+  
+    <mat-dialog-content >
+  
+      <div class="row">
+        <div class="column">
+          <mat-form-field>
+            <mat-label>Lugar :</mat-label>
+            <input formControlName="lugar" matInput placeholder="Ingrese el Lugar " autocomplete="off">
+          </mat-form-field>
+          <div class="error">
+            <span *ngIf="form.get('lugar')?.hasError('required') && form.get('lugar')?.touched">
+              El Lugar es un campo <strong>requerido</strong>  
+            </span>
+           
+          </div>
+        </div>
+    
+        <div  class="column">
+            <mat-form-field >
+              <input formControlName="fecha" matInput [matDatepicker]="picker" placeholder="Fecha" >
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <div class="error">
+              <span *ngIf="form.get('fecha')?.hasError('required') && form.get('fecha')?.touched">
+                Ingrese la Fecha
+              </span>
+            </div>
+    
+          </div>
+
+        <div class="column">
+          
+              <!-- <mat-form-field>
+                <input formControlName="hora" type="text" matInput [matTimepicker]="timepicker" />
+                <mat-timepicker-toggle  matSuffix [for]="timepicker"></mat-timepicker-toggle>
+                <mat-timepicker class="timepicker" #timepicker></mat-timepicker>
+              </mat-form-field>
+           -->
+            <div class="error">
+              <span *ngIf="form.get('hora')?.hasError('required') && form.get('hora')?.touched">
+                El horario es un campo <strong>requerido</strong>  
+              </span>
+            </div>
+          </div>
+      </div>
+    
+    
+    
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+      <button type="button" (click)="cancelar()" mat-button>Cancelar</button>
+      <button type="submit" mat-button cdkFocusInitial>Aceptar</button>
+    </mat-dialog-actions>
+    
+  </form>
