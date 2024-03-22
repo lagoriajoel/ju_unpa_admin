@@ -16,7 +16,8 @@ export interface hora {
 @Component({
   selector: 'app-add-program',
   templateUrl: './add-program.component.html',
-  styleUrls: ['./add-program.component.css']
+  styleUrls: ['./add-program.component.css'],
+  providers:[DatePipe]
 })
 export class AddProgramComponent implements OnInit {
   form: FormGroup;
@@ -27,21 +28,7 @@ export class AddProgramComponent implements OnInit {
   horario!:string
   game!: game
 
-   horarios: hora[] = [
-    {hora: "00", minutos: "05"},
-    {hora: "01", minutos: "10"},
-    {hora: "02", minutos: "15"},
-    {hora: "03", minutos: "20"},
-    {hora: "04", minutos: "25"},
-    {hora: "05", minutos: "30"},
-    {hora: "06", minutos: "35"},
-    {hora: "07", minutos: "40"},
-
-
-  ];
-  
-  
-
+   
   constructor(
     public dialogRef: MatDialogRef<AddProgramComponent>,
     private fb: FormBuilder,
@@ -55,8 +42,11 @@ export class AddProgramComponent implements OnInit {
       lugar: ["", [Validators.required, Validators.maxLength(100)]],
       fecha: ["", [Validators.required]],
       hora: ["", [Validators.required]],
-    });
 
+  
+      
+    });
+  this.datepipe
     this.idGame = data.idGame;
     console.log(this.idGame);
     this.getGame(this.idGame);
@@ -95,11 +85,13 @@ export class AddProgramComponent implements OnInit {
 
 
 
-   this.game.lugar = this.form.value.lugar
-   this.game.fecha = this.datepipe.transform(
-    this.form.value.fecha,
-    "dd/MM/yyyy")!
-    this.game.horario = this.datepipe.transform(this.form.value.hora,"shortTime")!
+  this.game.lugar = this.form.value.lugar
+  this.game.fecha = this.datepipe.transform(this.form.value.fecha,"dd/MM/yyyy")!
+  this.game.horario = this.form.value.hora
+
+  console.log(this.game.horario);
+
+    
 
     this.gameService.update(this.idGame, this.game).subscribe({
       next: data=> {

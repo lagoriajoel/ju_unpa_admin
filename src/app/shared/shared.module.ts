@@ -10,6 +10,16 @@ import { ContentPlaceholderAnimationComponent } from './content-placeholder-anim
 import { LocalDatePipe } from './pipes/local-date.pipe';
 import { YesNoPipe } from './pipes/yes-no.pipe';
 import { LayoutComponent } from './layout/layout.component';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { AsyncPipe } from '@angular/common';
+import { MatNativeDateTimeModule, MatTimepickerModule } from "@dhutaryan/ngx-mat-timepicker";
+
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatRadioModule} from '@angular/material/radio';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
 @NgModule({
     imports: [
@@ -18,6 +28,18 @@ import { LayoutComponent } from './layout/layout.component';
         FormsModule,
         ReactiveFormsModule,
         FlexLayoutModule,
+        MatStepperModule,
+        MatChipsModule,
+        MatIconModule,
+        MatAutocompleteModule,
+        AsyncPipe,
+        MatTimepickerModule,
+        MatNativeDateTimeModule,
+        MatRadioModule,      
+        MatGridListModule,
+
+        NgxMaterialTimepickerModule,
+        AsyncPipe
     ],
     declarations: [
         ConfirmDialogComponent,
@@ -25,7 +47,8 @@ import { LayoutComponent } from './layout/layout.component';
         LimitToPipe,
         LocalDatePipe,
         YesNoPipe,
-        LayoutComponent
+        LayoutComponent,
+        
     ],
     exports: [
         FormsModule,
@@ -36,7 +59,18 @@ import { LayoutComponent } from './layout/layout.component';
         ConfirmDialogComponent,
         ContentPlaceholderAnimationComponent,
         LocalDatePipe,
-        YesNoPipe
+        YesNoPipe,
+        MatStepperModule,
+        MatChipsModule,
+        MatIconModule,
+        MatAutocompleteModule,
+        AsyncPipe,
+        MatTimepickerModule,
+        MatNativeDateTimeModule,
+        MatRadioModule,
+        MatGridListModule,
+        NgxMaterialTimepickerModule,
+        AsyncPipe
     ]
 })
 export class SharedModule { }

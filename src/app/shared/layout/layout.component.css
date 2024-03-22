@@ -4,6 +4,8 @@
 
 .navbar {
   z-index: 2;
+  background-color:#148082;
+ /** background: linear-gradient(to bottom right,#006163, #9dd1d2)**/
 }
 
 .navbar-brand {
@@ -43,9 +45,9 @@
 
 mat-sidenav {
   min-width: 180px !important;
-  border-right: 1px solid #eee;
+  border-right: 1px solid  #9d9d9d8b;
   box-shadow: 6px 0 6px rgba(0, 0, 0, .1);
-  /* background-color:rgb(63, 81, 181); */
+   background-color:#ffff; 
 }
 
 /* Set height of wrapper to stop content from moving up & down */
@@ -53,12 +55,21 @@ mat-sidenav {
 .progress-bar-container {
   height: 5px;
 }
-
+/* 
 a.mat-list-item.active {
-  background: rgba(0, 0, 0, .04);
+  background: rgba(247, 243, 243, 0.76);
+ 
 }
-
+mat-icon {
+  color: black;
+} */
+mat-list-item {
+  background: #ffffff;
+}
 #push-bottom {
   position: absolute;
   bottom: 0;
+}
+.mat-line {
+  color: #eee;
 }

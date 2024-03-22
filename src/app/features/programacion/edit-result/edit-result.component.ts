@@ -39,7 +39,6 @@ export class EditResultComponent implements OnInit {
     public dialogRef: MatDialogRef<EditResultComponent>,
     private fb: FormBuilder,
     private equipoService:equipoService,
-   
     private notificationService: NotificationService,
     private gameService: gameService,   
     private _snackBar: MatSnackBar,

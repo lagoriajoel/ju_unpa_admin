@@ -1,4 +1,6 @@
 
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="95%">
      
       <div class="container">
         <h2 mat-dialog-title>Nuevo Torneo </h2>
@@ -60,14 +62,16 @@
          <section class="example-section">
           <label class="example-margin">Rondas :</label>
           <mat-radio-group aria-labelledby="example-radio-group-label"class="example-radio-group" formControlName="rondas">
-          <!-- <mat-radio-button class="example-margin" *ngFor="let ronda of rondas" [value]="ronda">
-            {{ronda}}
-          </mat-radio-button> -->
-        </mat-radio-group>
+            <mat-radio-button class="example-margin" *ngFor="let ronda of rondas" [value]="ronda">
+              {{ronda}}
+            </mat-radio-button>
+          </mat-radio-group>
         </section>
     
         
-           
+            
+
+
         
              
     

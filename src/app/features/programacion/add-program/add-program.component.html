@@ -30,22 +30,21 @@
               <span *ngIf="form.get('fecha')?.hasError('required') && form.get('fecha')?.touched">
                 Ingrese la Fecha
               </span>
-            </div>
+            </div> 
     
           </div>
 
         <div class="column">
           
-              <!-- <mat-form-field>
-                <input formControlName="hora" type="text" matInput [matTimepicker]="timepicker" />
-                <mat-timepicker-toggle  matSuffix [for]="timepicker"></mat-timepicker-toggle>
-                <mat-timepicker class="timepicker" #timepicker></mat-timepicker>
-              </mat-form-field>
-           -->
+              
+      
+            <ngx-timepicker-field [controlOnly]="true" formControlName="hora"></ngx-timepicker-field>
+      
             <div class="error">
-              <span *ngIf="form.get('hora')?.hasError('required') && form.get('hora')?.touched">
-                El horario es un campo <strong>requerido</strong>  
+              <span *ngIf="form.get('fecha')?.hasError('required') && form.get('fecha')?.touched">
+                Ingrese la Fecha
               </span>
+           
             </div>
           </div>
       </div>

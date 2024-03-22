@@ -36,7 +36,7 @@ torneo_id!: number
     this.route.queryParamMap.subscribe((params) => {
       this.torneo_id=Number(params.get("torneo_id"))
       params.get("isUser")=='true' ? this.isUser==true : this.isUser==false
-      console.log(params.get("isUser"));
+      
       }
     )
     this.listarEquiposPorTorneo(this.torneo_id)
