@@ -3,9 +3,9 @@ import { fechaIdDto } from "./fechaIdDto"
 
 export interface gameDTO {
    
-    fecha: string
-    lugar: string
-    horario: string
+    date: string
+    place: string
+    schudule: string
     score_1: number
     score_2: number
     program: fechaIdDto

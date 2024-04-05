@@ -112,7 +112,7 @@ export class UnidadListComponent implements OnInit {
   mostrarFila(unidad: unidadAcademica): void {
     this.router.navigate(['/equipos'], { queryParams: { 
       unidad_id: unidad.id,
-      siglas: unidad.siglas
+      siglas: unidad.acronym
     
     }})
   }

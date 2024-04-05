@@ -1,0 +1,64 @@
+<div class="container">
+    <h2 mat-dialog-title>{{ operacion }} Ubicaciones </h2>
+    <mat-spinner *ngIf="loading" [diameter]="30"></mat-spinner>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="addEditUnidad()">
+  
+    <mat-dialog-content >
+  
+      <div class="row">
+        <div class="column">
+          <mat-form-field appearance="fill"style="width:100%">
+            <mat-label>Nombre Ubicacion</mat-label>
+            <input formControlName="name" matInput placeholder="Ingrese el titulo de la Información" autocomplete="off">
+          </mat-form-field>
+          <div class="error">
+            <span *ngIf="form.get('name')?.hasError('required') && form.get('name')?.touched">
+              El Título es un campo <strong>requerido</strong>  
+            </span>
+            <span *ngIf="form.get('name')?.hasError('maxlength')">
+              El Nombre debe tener como maximo <strong>50 caracteres</strong> 
+            </span>
+          </div>
+        </div>
+
+        <div class="column">
+            <mat-form-field appearance="fill"style="width:100%">
+              <mat-label>Latitud </mat-label>
+              <input type="number" formControlName="latitude" matInput placeholder="Ingrese el titulo de la Información" autocomplete="off">
+            </mat-form-field>
+            <div class="error">
+              <span *ngIf="form.get('latitude')?.hasError('required') && form.get('latitude')?.touched">
+                El Título es un campo <strong>requerido</strong>  
+              </span>
+             
+            </div>
+          </div>
+    
+          <div class="column">
+            <mat-form-field appearance="fill"style="width:100%">
+              <mat-label>Longitud </mat-label>
+              <input type="number" formControlName="longitude" matInput placeholder="Ingrese el titulo de la Información" autocomplete="off">
+            </mat-form-field>
+            <div class="error">
+              <span *ngIf="form.get('longitude')?.hasError('required') && form.get('longitude')?.touched">
+                El Título es un campo <strong>requerido</strong>  
+              </span>
+             
+            </div>
+          </div>
+       
+  
+         
+      </div>
+    
+    
+    
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+      <button type="button" (click)="cancelar()" mat-button>Cancelar</button>
+      <button type="submit" mat-button cdkFocusInitial>Aceptar</button>
+    </mat-dialog-actions>
+    
+  </form>

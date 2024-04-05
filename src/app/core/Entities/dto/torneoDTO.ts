@@ -2,8 +2,8 @@ import { disciplinaIdDTO } from "./disciplinaIdDTO";
 
 export interface torneoDTO {
    
-    tipo: string;
-    nombre: string;
+    type: string;
+    name: string;
     numTeams: number;
     sport:disciplinaIdDTO
 }

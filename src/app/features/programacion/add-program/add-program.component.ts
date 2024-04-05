@@ -85,11 +85,11 @@ export class AddProgramComponent implements OnInit {
 
 
 
-  this.game.lugar = this.form.value.lugar
-  this.game.fecha = this.datepipe.transform(this.form.value.fecha,"dd/MM/yyyy")!
-  this.game.horario = this.form.value.hora
+  this.game.place = this.form.value.lugar
+  this.game.date = this.datepipe.transform(this.form.value.fecha,"dd/MM/yyyy")!
+  this.game.schudule = this.form.value.hora
 
-  console.log(this.game.horario);
+  console.log(this.game.schudule);
 
     
 

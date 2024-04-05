@@ -3,6 +3,9 @@
 
      <div class="title">
       <h3> {{nombreTorneo}}</h3>
+      <mat-divider>
+      </mat-divider>
+      <h3>Equipos participantes</h3>
      </div>
 
         <div fxLayout="row wrap" fxLayoutGap="16px grid">
@@ -10,7 +13,7 @@
                    <div class="equipos">
                        <mat-card style="text-align: center;">
                            <mat-card-content>
-                            {{item.nombre.toUpperCase()}}
+                            {{item.name | uppercase}}
                            </mat-card-content>
                        </mat-card>
                    </div>
@@ -45,10 +48,10 @@
                                     <div  *ngFor="let item of item.games">
                                         <mat-card class="partidos">
                                            
-                                                <mat-card-title> {{item.team_1.nombre}} <span>  {{item.score_1}}  </span>  vs <span>  {{item.score_2}}  </span> {{item.team_2.nombre}}</mat-card-title>
-                                                <mat-card-subtitle>  Fecha:{{item.fecha}}</mat-card-subtitle>
-                                                <mat-card-subtitle>  Lugar:{{item.lugar}}</mat-card-subtitle>
-                                                <mat-card-subtitle>    Horario:{{item.horario}}</mat-card-subtitle>
+                                                <mat-card-title> {{item.team_1.name}} <span>  {{item.score_1}}  </span>  vs <span>  {{item.score_2}}  </span> {{item.team_2.name}}</mat-card-title>
+                                                <mat-card-subtitle>  Fecha:{{item.date}}</mat-card-subtitle>
+                                                <mat-card-subtitle>  Lugar:{{item.place}}</mat-card-subtitle>
+                                                <mat-card-subtitle>    Horario:{{item.schudule}}</mat-card-subtitle>
                                                 
                                           
                                          
@@ -81,11 +84,5 @@
         </div>
 
 
-         
-        <div class="toggle-example">
-            <input [ngxTimepicker]="toggleTimepicker" [disableClick]="true" readonly>
-            <ngx-material-timepicker-toggle [for]="toggleTimepicker"></ngx-material-timepicker-toggle>
-            <ngx-material-timepicker #toggleTimepicker></ngx-material-timepicker>
-        </div>
 
 </div> 

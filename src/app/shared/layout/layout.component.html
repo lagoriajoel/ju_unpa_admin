@@ -80,6 +80,14 @@
           <mat-icon matListItemIcon>emoji_events</mat-icon>
           <div matListItemTitle>Torneos</div>
         </mat-list-item>
+        <mat-list-item  [routerLink]="['/info']" routerLinkActive="active" >
+          <mat-icon matListItemIcon>info</mat-icon>
+          <div matListItemTitle>Novedades</div>
+        </mat-list-item>
+        <mat-list-item  [routerLink]="['/location']" routerLinkActive="active" >
+          <mat-icon matListItemIcon>location_on</mat-icon>
+          <div matListItemTitle>Ubicaciones</div>
+        </mat-list-item>
      
         <mat-list-item  [routerLink]="['/account/profile']" >
           <mat-icon matListItemIcon>person</mat-icon>

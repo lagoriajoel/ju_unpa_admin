@@ -1,39 +1,38 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { disciplina } from 'src/app/core/Entities/disciplina';
-import { disciplinaService } from 'src/app/core/services/disciplina.service';
+import { information } from 'src/app/core/Entities/information';
+import { InfoService } from 'src/app/core/services/info.service';
 import { NotificationService } from 'src/app/core/services/notification.service';
 
-
-
 @Component({
-  selector: 'app-add-edit-disciplina',
-  templateUrl: './add-edit-disciplina.component.html',
-  styleUrls: ['./add-edit-disciplina.component.css']
+  selector: 'app-add-info',
+  templateUrl: './add-info.component.html',
+  styleUrls: ['./add-info.component.css']
 })
-export class AddEditDisciplinaComponent implements OnInit {
+export class AddInfoComponent {
   form: FormGroup;
 
-  loading: boolean = false;
+  loading: boolean;
   operacion: string = "Agregar ";
   id: number | undefined;
-   categorias: string[] = [
-    "MASCULINO", "FEMENINO","MIXTO"
-  ];
+  
 
   constructor(
-    public dialogRef: MatDialogRef<AddEditDisciplinaComponent>,
+    public dialogRef: MatDialogRef<AddInfoComponent>,
     private fb: FormBuilder,
     private notificationService: NotificationService,
-   private disciplineService: disciplinaService,
+   private infoService: InfoService,
     private _snackBar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
+    this.loading = false;
     this.form = this.fb.group({
-      nombre: ["", [Validators.required, Validators.maxLength(100)]],
-      categoria: ["", [Validators.required]],
+      title: ["", [Validators.required, Validators.maxLength(100)]],
+      body: ["", [Validators.required]],
+   
+
     });
 
     this.id = data.id;
@@ -47,20 +46,21 @@ export class AddEditDisciplinaComponent implements OnInit {
   esEditar(id: number | undefined) {
     if (id !== undefined) {
       this.operacion = "Editar ";
-      this.getDisciplina(id);
+      this.getInfo(id);
       
     }
   }
 
-  getDisciplina(id: number) {
+  getInfo(id: number) {
         
-   this.disciplineService.detail(id).subscribe({ 
+   this.infoService.listaPorId(id).subscribe({ 
     next: data=>{  
       console.log(data);
       this.form.setValue({
     
-      nombre: data.name,
-      categoria: data.category,
+      title: data.title_info,
+      body: data.body_info,
+    
      
     
   
@@ -77,23 +77,24 @@ export class AddEditDisciplinaComponent implements OnInit {
     this.dialogRef.close(false);
   }
 
-  addEditContenido() {
+  addEditUnidad() {
     if (this.form.invalid) {
       return;
     }
    
 
-    const disciplina: disciplina = {
+    const info: information = {
       id:0,
-      name: this.form.value.nombre,
-      category: this.form.value.categoria,
+      title_info: this.form.value.title,
+      body_info: this.form.value.body,
      
     };
 
-    this.loading = true;
+  
+    setTimeout(()=>{  this.loading=true},5)
     if (this.id == undefined) {
       // Es agregar
-      this.disciplineService.save(disciplina).subscribe(
+      this.infoService.save(info).subscribe(
         {
           next: () => {
         this.mensajeExito("agregado");
@@ -106,7 +107,7 @@ export class AddEditDisciplinaComponent implements OnInit {
       );
     } else {
       // Es editar
-      this.disciplineService.update(this.id, disciplina).subscribe((data) => {
+      this.infoService.update(this.id, info).subscribe((data) => {
         this.mensajeExito("actualizado");
         this.dialogRef.close(true);
       });

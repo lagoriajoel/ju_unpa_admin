@@ -12,7 +12,7 @@
             <mat-label>Nombre</mat-label>
             <mat-select formControlName="disciplina">
             <mat-option *ngFor="let disciplina of disciplinas" [value]="disciplina.id">
-                {{disciplina.nombre}}  {{disciplina.categoria}}
+                {{disciplina.name}}  {{disciplina.category}}
               </mat-option>
             </mat-select>
           </mat-form-field>

@@ -52,7 +52,7 @@ export class EquiposListComponent implements OnInit {
     this.equiposService.lista().subscribe({
       next: data=>{
         console.log(data);
-        const equiposFilter = data.filter(equipo=>equipo.nombre==this.siglas)
+        const equiposFilter = data.filter(equipo=>equipo.name==this.siglas)
         
         this.equipos=equiposFilter
         this.dataSource.data = equiposFilter;

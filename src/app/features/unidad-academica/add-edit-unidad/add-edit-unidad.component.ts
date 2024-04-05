@@ -59,9 +59,9 @@ export class AddEditUnidadComponent implements OnInit {
       console.log(data);
       this.form.setValue({
     
-      nombre: data.nombre,
-      localidad: data.localidad,
-      siglas: data.siglas.toUpperCase()
+      nombre: data.name,
+      localidad: data.place,
+      siglas: data.acronym.toUpperCase()
      
     
   
@@ -86,9 +86,9 @@ export class AddEditUnidadComponent implements OnInit {
 
     const unidad: unidadAcademicaDTO = {
       
-      nombre: this.form.value.nombre,
-      localidad: this.form.value.localidad,
-      siglas: this.form.value.siglas
+      name: this.form.value.nombre,
+      place: this.form.value.localidad,
+      acronym: this.form.value.siglas
     };
 
   

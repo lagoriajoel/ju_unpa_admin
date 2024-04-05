@@ -4,7 +4,7 @@ import { unidadIdDTO } from "./unidadIdDTO";
 
 export interface equipoDTO {
     
-    nombre: string;
+    name: string;
     sport:disciplinaIdDTO;
     unidadAcademica: unidadIdDTO;
     matchWon:number

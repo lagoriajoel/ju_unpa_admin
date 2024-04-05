@@ -3,9 +3,9 @@ import { fecha } from "./fecha"
 
 export interface game {
     id: number
-    fecha: string
-    lugar: string
-    horario: string
+    date: string
+    place: string
+    schudule: string
     score_1: number
     score_2: number
     program: fecha

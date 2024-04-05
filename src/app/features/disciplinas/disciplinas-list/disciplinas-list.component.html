@@ -22,13 +22,13 @@
              
               <ng-container matColumnDef="nombre">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Disciplina </th>
-                <td mat-cell *matCellDef="let element"> {{element.nombre.toUpperCase()}}</td>
+                <td mat-cell *matCellDef="let element"> {{element.name | uppercase}}</td>
               </ng-container>
             
            
               <ng-container matColumnDef="descripcion">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Categoría </th>
-                <td mat-cell *matCellDef="let element"> {{element.categoria.toUpperCase()}} </td>
+                <td mat-cell *matCellDef="let element"> {{element.category | uppercase}} </td>
               </ng-container>
             
               

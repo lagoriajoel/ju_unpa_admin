@@ -46,8 +46,8 @@ export class ClasificacionComponent implements OnInit {
 
   this.disciplinaService.detail(this.idDeporte).subscribe({
     next: data=>{
-      this.categoriaDeporte = data.categoria
-      this.NombreDeporte=data.nombre
+      this.categoriaDeporte = data.category
+      this.NombreDeporte=data.name
     }
   })
 

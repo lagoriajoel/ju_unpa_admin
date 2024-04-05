@@ -118,8 +118,8 @@ rondaSelected!: number;
       id: this.disciplinaSlected.id
     }
     const torneo: torneoDTO = {
-      tipo: "round robin",
-      nombre: "CAMPEONATO DE " + this.disciplinaSlected.nombre.toUpperCase() + " " + this.disciplinaSlected.categoria.toUpperCase(),
+      type: "round robin",
+      name: "CAMPEONATO DE " + this.disciplinaSlected.name.toUpperCase() + " " + this.disciplinaSlected.category.toUpperCase(),
       numTeams: this.equipos.length,
       sport: disciplinaId 
     };

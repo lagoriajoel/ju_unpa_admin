@@ -1,6 +1,6 @@
 export interface torneo {
     id:number;
     tipo: string;
-    nombre: string;
+    name: string;
     numTeams: number;
 }

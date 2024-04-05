@@ -1,6 +1,6 @@
 export interface unidadAcademicaDTO {
    
-     nombre: string;
-     localidad: string;
-     siglas: string;
+     name: string;
+     place: string;
+     acronym: string;
  }

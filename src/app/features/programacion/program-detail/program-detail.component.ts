@@ -50,7 +50,7 @@ torneo_id!: number
   listarTorneo(torneoId: number): void {
     this.torneoService.detail(torneoId).subscribe({
       next: data=>{
-        this.nombreTorneo=data.nombre
+        this.nombreTorneo=data.name
       }
     })
   }

@@ -9,10 +9,16 @@ import { CustomMaterialModule } from './custom-material/custom-material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { LoggerModule } from 'ngx-logger';
 import { environment } from '../environments/environment';
+import { InformacionHomeComponent } from './features/informacion/informacion-home/informacion-home.component';
+import { UbicacionesHomeComponent } from './features/ubicaciones/ubicaciones-home/ubicaciones-home.component';
+import { AddUbicacionesComponent } from './features/ubicaciones/add-ubicaciones/add-ubicaciones.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UbicacionesHomeComponent,
+    AddUbicacionesComponent,
+    
   ],
   imports: [
     BrowserModule,

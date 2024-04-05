@@ -65,8 +65,8 @@ export class EditResultComponent implements OnInit {
      this.gameService.detail(idGame).subscribe({
       next: data=> {
         this.game = data
-        this.nameEquipo1=data.team_1.nombre
-        this.nameEquipo2=data.team_2.nombre
+        this.nameEquipo1=data.team_1.name
+        this.nameEquipo2=data.team_2.name
 
         console.log(this.game);
       }

@@ -1,7 +1,7 @@
 
 export interface unidadAcademica {
    id:number;
-    nombre: string;
-    localidad: string;
-    siglas: string;
+    name: string;
+    place: string;
+    acronym: string;
 }

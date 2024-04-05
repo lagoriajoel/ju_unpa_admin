@@ -83,8 +83,8 @@ export class AddEditEquipoComponent implements OnInit {
       console.log(data);
       this.form.setValue({
     
-      nombre: data.nombre,
-      categoria: data.categoria,
+      nombre: data.name,
+      categoria: data.category,
      
     
   
@@ -114,7 +114,7 @@ export class AddEditEquipoComponent implements OnInit {
 
     const equipo: equipoDTO= {
       
-      nombre: this.siglas,
+      name: this.siglas,
       sport:disciplina,
       unidadAcademica: unidadAcademica,
       matchWon:0,

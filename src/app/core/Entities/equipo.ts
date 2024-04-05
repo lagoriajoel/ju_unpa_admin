@@ -5,7 +5,7 @@ import { unidadAcademica } from "./unidadAcademica";
 
 export interface equipo {
     id:number
-    nombre: string;
+    name: string;
     sport:disciplina;
     unidadAcademica: unidadAcademica;
     matchWon:number
