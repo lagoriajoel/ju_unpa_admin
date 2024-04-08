@@ -10,7 +10,7 @@ import { Observable } from "rxjs";
   })
   export class InfoService {
   
-    ContenidoURL = environment.apiURL+'/info/';
+    ContenidoURL = environment.apiURL +'/info/'
   
     constructor(private httpClient: HttpClient) { }
   

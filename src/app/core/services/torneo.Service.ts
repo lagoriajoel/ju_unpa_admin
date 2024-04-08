@@ -12,7 +12,7 @@ import { equipoDTO } from "../Entities/dto/equipoDTO";
   })
   export class torneoService {
   
-    ContenidoURL = environment.apiURL+'/tourment/';
+    ContenidoURL = environment.apiURL +'/tourment/'
   
     constructor(private httpClient: HttpClient) { }
   

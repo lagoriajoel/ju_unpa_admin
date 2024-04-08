@@ -16,7 +16,7 @@ const TOKEN_KEY = 'token';
 })
 export class AuthenticationService {
 
-    authURL = environment.apiURL+'/auth/';
+    authURL = environment.apiURL + '/auth/'
 
     constructor(private http: HttpClient,
         @Inject('LOCALSTORAGE') private localStorage: Storage, private router: Router) {
@@ -41,8 +41,27 @@ export class AuthenticationService {
        public listByUsername(nombreUsuario: string): Observable<usuario> {
         return this.http.get<usuario>(this.authURL + `list/${nombreUsuario}`);
     }
+
+    public list(): Observable<usuario[]> {
+      return this.http.get<usuario[]>(this.authURL + 'list');
+  }
+
+  public listById(id: number): Observable<usuario> {
+    return this.http.get<usuario>(this.authURL + `list/${id}`);
+}
     
+    public save(usuario: usuario): Observable<any> {
+      return this.http.post<any>(this.authURL + 'save', usuario);
+  }
+
    
+  public update(id: number, usuario: usuario): Observable<any> {
+    return this.http.put<any>(this.authURL + `update/${id}`, usuario);
+}
+
+  public delete(id: number): Observable<any> {
+    return this.http.delete<any>(this.authURL + `delete/${id}`);
+}
 
     logout(): void {
         // clear token remove user from local storage to log user out

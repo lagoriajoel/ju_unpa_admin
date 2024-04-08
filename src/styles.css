@@ -131,6 +131,14 @@ p .mat-icon {
   /* padding: 10px 5px; */
 }
 
+button {
+  font-family: 'Bebas Neue', sans-serif ; 
+}
+button:hover{
+  background-color:#0f728694;
+  color: aliceblue;
+  }
+
 .animate {
   animation-name: show;
   animation-duration: 1s;

@@ -11,7 +11,7 @@ import { Location } from "../Entities/Location";
   })
   export class LocationService {
   
-    ContenidoURL = environment.apiURL+'/location/';
+    ContenidoURL = environment.apiURL +'/location/'
   
     constructor(private httpClient: HttpClient) { }
   

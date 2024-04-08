@@ -13,7 +13,7 @@ import { fecha } from "../Entities/fecha";
   })
   export class fechaService {
   
-    ContenidoURL = environment.apiURL+'/programs/';
+    ContenidoURL = environment.apiURL +'/programs/'
   
     constructor(private httpClient: HttpClient) { }
   

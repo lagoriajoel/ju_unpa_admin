@@ -11,7 +11,7 @@ import { Observable } from "rxjs";
   })
   export class disciplinaService {
   
-    ContenidoURL = environment.apiURL+'/disciplinas/';
+    ContenidoURL = environment.apiURL +'/disciplinas/'
   
     constructor(private httpClient: HttpClient) { }
   

@@ -9,7 +9,7 @@
 
     <a class="navbar-brand" [routerLink]="['/']" matTooltip="Home">
       <h1>
-        juegos-unpa-admin
+        JUEGOS UNPA Admin
       </h1>
     </a>
 
@@ -89,10 +89,12 @@
           <div matListItemTitle>Ubicaciones</div>
         </mat-list-item>
      
-        <mat-list-item  [routerLink]="['/account/profile']" >
-          <mat-icon matListItemIcon>person</mat-icon>
-          <div matListItemTitle>Cuenta</div>
+        <mat-list-item  [routerLink]="['/users']" >
+          <mat-icon matListItemIcon>group</mat-icon>
+          <div matListItemTitle>Usuarios</div>
         </mat-list-item>
+
+     
 
         <mat-list-item  [routerLink]="['/auth/login']" >
           <mat-icon matListItemIcon>exit_to_app</mat-icon>

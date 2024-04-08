@@ -4,7 +4,7 @@
 
 .navbar {
   z-index: 2;
-  background-color:#148082;
+  background: linear-gradient(20deg,rgb(23, 52, 78),rgb(22, 118, 127),rgba(28, 103, 91, 0.873));
  /** background: linear-gradient(to bottom right,#006163, #9dd1d2)**/
 }
 

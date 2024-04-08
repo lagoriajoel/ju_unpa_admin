@@ -5,7 +5,7 @@ export interface game {
     id: number
     date: string
     place: string
-    schudule: string
+    schedule: string
     score_1: number
     score_2: number
     program: fecha

@@ -16,8 +16,7 @@ import { AddUbicacionesComponent } from './features/ubicaciones/add-ubicaciones/
 @NgModule({
   declarations: [
     AppComponent,
-    UbicacionesHomeComponent,
-    AddUbicacionesComponent,
+    
     
   ],
   imports: [

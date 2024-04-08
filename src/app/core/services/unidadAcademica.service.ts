@@ -13,7 +13,7 @@ import { unidadAcademicaDTO } from "../Entities/dto/unidadAcademicaDTO";
   })
   export class unidadAcademicaService {
   
-    ContenidoURL = environment.apiURL+'/unidadesAcademicas/';
+    ContenidoURL = environment.apiURL +'/unidadesAcademicas/'
   
     constructor(private httpClient: HttpClient) { }
   

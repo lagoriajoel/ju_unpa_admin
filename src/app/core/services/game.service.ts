@@ -15,7 +15,7 @@ import { gameDTO } from "../Entities/dto/gameDTO";
   })
   export class gameService {
   
-    ContenidoURL = environment.apiURL+'/games/';
+    ContenidoURL = environment.apiURL +'/games/'
   
     constructor(private httpClient: HttpClient) { }
   
