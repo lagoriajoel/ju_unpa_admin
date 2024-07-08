@@ -1,10 +1,10 @@
 # Juegos UNPA
 
-![Logo](assets/images/download.gif)
+![Logo](src/assets/images/download.gif)
 
 ## Descripción
 
-**Juegos UNPA Admin ** es el sistema de administracion para la aplicación Juegos UNPA desarrollada para la gestión de los juegos universitarios de la Universidad Nacional de la Patagonia Austral. Esta aplicación está diseñada para facilitar la organización y administración de los encuentros deportivos, así como para generar y mantener actualizadas las tablas de posiciones de los equipos participantes.
+- **Juegos UNPA Admin** es el sistema de administracion para la aplicación Juegos UNPA desarrollada para la gestión de los juegos universitarios de la Universidad Nacional de la Patagonia Austral. Esta aplicación está diseñada para facilitar la organización y administración de los encuentros deportivos, así como para generar y mantener actualizadas las tablas de posiciones de los equipos participantes.
 
 ## Funcionalidades Principales
 
