@@ -102,8 +102,8 @@ eliminar(id: number) {
     width: "500px",
     disableClose: true,
  data: {
-  title:"Eliminar Estrategia",
-  message:"¿Esta seguro de eliminar la estrategia?"
+  title:"Eliminar Disciplina",
+  message:"¿Esta seguro de eliminar la Disciplina?"
  }
  
 

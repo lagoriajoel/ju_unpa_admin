@@ -8,7 +8,7 @@
   
       <div class="row">
         <div class="column">
-          <mat-form-field appearance="fill">
+          <mat-form-field appearance="fill" >
             <mat-label>Nombre</mat-label>
             <input formControlName="nombre" matInput placeholder="Ingrese el Nombre del Contenido" autocomplete="off">
           </mat-form-field>
@@ -31,6 +31,17 @@
                   {{categoria}}
                 </mat-option>
               </mat-select>
+          </mat-form-field>
+         
+          
+        </div>
+
+        <div class="column">
+          <mat-form-field appearance="fill">
+            <mat-label>Imagen</mat-label>
+         
+                <input formControlName="imagen" matInput placeholder="url de imagen" value="value">
+          
           </mat-form-field>
          
           

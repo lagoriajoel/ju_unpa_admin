@@ -25,7 +25,7 @@ export class PasswordResetComponent implements OnInit {
     private notificationService: NotificationService,
     private titleService: Title) {
 
-    this.titleService.setTitle('juegos-unpa-admin - Password Reset');
+  
     this.hideNewPassword = true;
     this.hideNewPasswordConfirm = true;
   }

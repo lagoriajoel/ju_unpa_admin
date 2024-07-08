@@ -10,10 +10,10 @@
           <div class="column">
             <mat-form-field  style="width: 100%;">
               <mat-label>Nombre</mat-label>
-              <input formControlName="dni" matInput placeholder="Ingrese su DNI" autocomplete="off">
+              <input formControlName="name" matInput placeholder="Ingrese el nombre del Administrador" autocomplete="off">
             </mat-form-field>
             <div class="error">
-              <span *ngIf="form.get('dni')?.hasError('required') && form.get('dni')?.touched">
+              <span *ngIf="form.get('name')?.hasError('required') && form.get('name')?.touched">
                 El DNI es un campo <strong>requerido</strong>  
               </span>
               <span *ngIf="form.get('dni')?.hasError('maxlength')">
@@ -25,10 +25,10 @@
           <div class="column">
             <mat-form-field  style="width: 100%;">
               <mat-label>Nombre de Usuario</mat-label>
-              <input formControlName="nombre" matInput placeholder="Ingrese Su Nombre" autocomplete="off">
+              <input formControlName="userName" matInput placeholder="Ingrese la contraseña" autocomplete="off">
             </mat-form-field>
             <div class="error">
-              <span *ngIf="form.get('nombre')?.hasError('required') && form.get('nombre')?.touched">
+              <span *ngIf="form.get('userName')?.hasError('required') && form.get('userName')?.touched">
                  Debe ingresar un <strong>Nombre</strong>  
               </span>
             </div>
@@ -39,10 +39,10 @@
           <div class="column">
             <mat-form-field  style="width: 100%;">
               <mat-label>Contraseña</mat-label>
-              <input formControlName="apellido" matInput placeholder="Password" autocomplete="off" type="password">
+              <input formControlName="password" matInput placeholder="Contraseña" autocomplete="off" type="password">
             </mat-form-field>
             <div class="error">
-              <span *ngIf="form.get('apellido')?.hasError('required') && form.get('apellido')?.touched">
+              <span *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched">
                   Debe ingresar un/os <strong>Apellido/os</strong> 
               </span>
              
@@ -51,10 +51,10 @@
           <div class="column">
               <mat-form-field  style="width: 100%;">
                 <mat-label>Repetir Contraseña</mat-label>
-                <input formControlName="email" matInput placeholder="Repaet Password" autocomplete="off" type="password">
+                <input formControlName="password2" matInput placeholder="Repetir Contraseña" autocomplete="off" type="password">
               </mat-form-field>
               <div class="error">
-                <span *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
+                <span *ngIf="form.get('password2')?.hasError('required') && form.get('password2')?.touched">
                   El Email  es un campo <strong>requerido</strong>  
                 </span>
                 <span *ngIf="form.get('email')?.hasError('email')">

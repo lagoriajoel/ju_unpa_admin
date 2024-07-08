@@ -17,21 +17,25 @@ export class AddUserComponent {
   loading: boolean;
   operacion: string = "Agregar ";
   id: number | undefined;
+
+  roles: Array<string>=["admin"]
   
 
   constructor(
     public dialogRef: MatDialogRef<AddUserComponent>,
     private fb: FormBuilder,
     private notificationService: NotificationService,
-   private locationService: AuthenticationService,
+   private authService: AuthenticationService,
     private _snackBar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.loading = false;
     this.form = this.fb.group({
       name: ["", [Validators.required, Validators.maxLength(100)]],
-      latitude: ["", [Validators.required]],
-      longitude: ["", [Validators.required]],
+      userName: ["", [Validators.required, Validators.maxLength(100)]],
+
+      password: ["", [Validators.required]],
+      password2: ["", [Validators.required]],
 
     });
 
@@ -53,7 +57,7 @@ export class AddUserComponent {
 
   getInfo(id: number) {
         
-   this.locationService.listById(id).subscribe({ 
+   this.authService.listById(id).subscribe({ 
     next: data=>{  
       console.log(data);
       this.form.setValue({
@@ -80,12 +84,12 @@ export class AddUserComponent {
     }
    
 
-    const location: usuario = {
+    const usuario: usuario = {
       
-     nombre: this.form.value.nombre,
-     nombreUsuario: this.form.value.nombreUsuarios,
+     nombre: this.form.value.name,
+     nombreUsuario: this.form.value.userName,
      password: this.form.value.password,
-     roles: this.form.value.roles
+     roles: this.roles
      
     };
 
@@ -93,7 +97,7 @@ export class AddUserComponent {
     setTimeout(()=>{  this.loading=true},5)
     if (this.id == undefined) {
       // Es agregar
-      this.locationService.save(location).subscribe(
+      this.authService.save(usuario).subscribe(
         {
           next: () => {
         this.mensajeExito("agregado");
@@ -106,7 +110,7 @@ export class AddUserComponent {
       );
     } else {
       // Es editar
-      this.locationService.update(this.id, location).subscribe((data) => {
+      this.authService.update(this.id, usuario).subscribe((data) => {
         this.mensajeExito("actualizado");
         this.dialogRef.close(true);
       });

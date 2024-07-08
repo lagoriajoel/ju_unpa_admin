@@ -51,7 +51,7 @@ export class AuthenticationService {
 }
     
     public save(usuario: usuario): Observable<any> {
-      return this.http.post<any>(this.authURL + 'save', usuario);
+      return this.http.post<any>(this.authURL + 'nuevo', usuario);
   }
 
    

@@ -23,7 +23,7 @@ export class PasswordResetRequestComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    this.titleService.setTitle('juegos-unpa-admin - Password Reset Request');
+  
 
     this.form = new UntypedFormGroup({
       email: new UntypedFormControl('', [Validators.required, Validators.email])
@@ -39,7 +39,7 @@ export class PasswordResetRequestComponent implements OnInit {
       .subscribe(
         results => {
           this.router.navigate(['/auth/login']);
-          this.notificationService.openSnackBar('Password verification mail has been sent to your email address.');
+          this.notificationService.openSnackBar('Un email de verificacion ha sido enviado a su casilla de correo');
         },
         error => {
           this.loading = false;

@@ -91,8 +91,10 @@ export class EditResultComponent implements OnInit {
       return;
     }
   
-    let score_1 = this.form.value.score_1
-    let score_2 = this.form.value.score_2
+    let score_1 =0
+    score_1 = this.form.value.score_1
+    let score_2 = 0
+    score_2= this.form.value.score_2
 
     this.game.score_1=this.form.value.score_1
     this.game.score_2=this.form.value.score_2
@@ -110,7 +112,8 @@ export class EditResultComponent implements OnInit {
           equipo1.matchWon=1
           equipo1.matchLost=0
           equipo1.matchTied=0
-
+          
+          equipo2.point=0
           equipo2.goalAgainst=score_1
           equipo2.goalFor=score_2
           equipo2.matchWon=0
@@ -129,8 +132,9 @@ export class EditResultComponent implements OnInit {
     equipo2.matchLost=0
     equipo2.matchTied=0
 
-    equipo1.goalAgainst=score_1
-    equipo1.goalFor=score_2
+    equipo1.point=0
+    equipo1.goalAgainst=score_2
+    equipo1.goalFor=score_1
     equipo1.matchWon=0
     equipo1.matchLost=1
     equipo1.matchTied=0
@@ -153,6 +157,8 @@ else if (score_1==score_2){
       equipo1.matchLost=0
       equipo1.matchTied=1
 }
+console.log(equipo1)
+console.log(equipo2)
 
    this.equipoService.update(equipo1.id, equipo1).subscribe(data => {
     console.log(data);

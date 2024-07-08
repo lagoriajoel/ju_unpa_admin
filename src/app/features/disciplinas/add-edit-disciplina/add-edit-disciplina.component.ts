@@ -34,6 +34,7 @@ export class AddEditDisciplinaComponent implements OnInit {
     this.form = this.fb.group({
       nombre: ["", [Validators.required, Validators.maxLength(100)]],
       categoria: ["", [Validators.required]],
+      imagen: ["", [Validators.required]]
     });
 
     this.id = data.id;
@@ -87,6 +88,7 @@ export class AddEditDisciplinaComponent implements OnInit {
       id:0,
       name: this.form.value.nombre,
       category: this.form.value.categoria,
+      image: this.form.value.imagen
      
     };
 

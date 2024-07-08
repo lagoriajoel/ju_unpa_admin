@@ -9,5 +9,8 @@ export const environment = {
   production: false,
   logLevel: NgxLoggerLevel.TRACE,
   serverLogLevel: NgxLoggerLevel.OFF,
-  apiURL: 'https://ju-unpa-api-v1.onrender.com'
+  //apiURL: 'https://ju-unpa-api-v1.onrender.com'
+  //apiURL: 'http://3.145.20.171:8001'
+ apiURL: 'http://localhost:8001'
+
 };
