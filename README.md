@@ -1,6 +1,6 @@
 # Juegos UNPA
 
-![Logo](src/assets/images/download.gif)
+![Logo](src/assets/images/demo.gif)
 
 ## Descripción
 
